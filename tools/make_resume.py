@@ -59,7 +59,7 @@ def hyperlink(p, text, url):
 
 # ---------- HEADER ----------
 para('ESHAN SHARMA', bold=True, size=20, align=WD_ALIGN_PARAGRAPH.CENTER, space_after=1)
-para('DevOps & DevSecOps Engineer  |  Multi-Cloud, Kubernetes & CI/CD', bold=True, size=12, align=WD_ALIGN_PARAGRAPH.CENTER, space_after=2)
+para('DevOps Lead  |  Multi-Cloud, Kubernetes & DevSecOps', bold=True, size=12, align=WD_ALIGN_PARAGRAPH.CENTER, space_after=2)
 
 cp = doc.add_paragraph(); cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
 cp.paragraph_format.space_after = Pt(2)
@@ -78,7 +78,7 @@ hyperlink(cp, 'eshan-06.github.io', 'https://eshan-06.github.io/')
 heading('PROFESSIONAL SUMMARY')
 para('DevOps/DevSecOps engineer with 9+ years in IT \u2014 4+ years architecting secure, highly available, multi-cloud '
      'infrastructure (AWS, Azure, GCP) and end-to-end CI/CD for SaaS products, preceded by 5 years of application '
-     'development and support. Currently DevSecOps Engineer on WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 '
+     'development and support. Currently DevOps Lead on WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 '
      'owning Terragrunt-based IaC across GCP and on-premises Kubernetes (k3s), Docker build/release pipelines, '
      'Vault-backed secrets management, and security controls as the platform scales multi-cloud, globally. '
      'Cut deployment time 40%, sustained 99.9% uptime, remediated 120+ vulnerabilities via SAST/DAST/VAPT, and led '
@@ -105,7 +105,7 @@ for k, v in comps:
 # ---------- EXPERIENCE ----------
 heading('PROFESSIONAL EXPERIENCE')
 
-job('DevSecOps Engineer', 'Estrel.ai Pvt. Ltd. \u2014 WiiZ (Agentic AI SaaS OS)', 'Nov 2025 \u2013 Present', [
+job('DevOps Lead', 'Estrel.ai Pvt. Ltd. \u2014 WiiZ (Agentic AI SaaS OS)', 'Nov 2025 \u2013 Present', [
     'Own DevSecOps for WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
     'Built Terragrunt-based IaC for GCP and on-premises Kubernetes (k3s) \u2014 service accounts/IAM roles, versioned remote state, ingress and Nginx routing; deployed HashiCorp Vault, migrating hard-coded API keys to secret-manager lookups.',
     'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled dev/sandbox/prod builds, rollback/versioning workflows, PR governance; optimized Docker builds (shared base image + pip cache mounts) cutting build times.',
@@ -159,5 +159,5 @@ heading('EDUCATION')
 para('Bachelor of Technology in Electronics & Communication Engineering', bold=True, space_after=0)
 para('RD Engineering College (UPTU) \u2014 2014', space_after=0)
 
-doc.save('Eshan_Sharma_Resume_BEST.docx')
-print('saved Eshan_Sharma_Resume_BEST.docx')
+doc.save('Eshan_Sharma_Resume.docx')
+print('saved Eshan_Sharma_Resume.docx')

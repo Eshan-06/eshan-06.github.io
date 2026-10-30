@@ -35,7 +35,7 @@ const PROJECTS = [
 /* ---------------- Experience ---------------- */
 const EXPERIENCE = [
   {
-    role: 'DevSecOps Engineer', company: 'Estrel.ai — WiiZ (Agentic AI SaaS OS)', date: 'Nov 2025 — Present',
+    role: 'DevOps Lead', company: 'Estrel.ai — WiiZ (Agentic AI SaaS OS)', date: 'Nov 2025 — Present',
     points: [
       'Own DevSecOps for WiiZ, Estrel AI\'s Agentic AI SaaS Operating System — CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
       'Built Terragrunt-based IaC for GCP and on-premises Kubernetes (k3s): service accounts and IAM roles, versioned remote state buckets, ingress and Nginx routing for hub backend, sandbox and dev environments.',

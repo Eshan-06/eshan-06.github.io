@@ -17,7 +17,7 @@
 ```bash
 eshan@cloud:~$ whoami
 DevOps/DevSecOps engineer · 9+ years in IT · 4+ years DevOps · Lucknow, India 🇮🇳
-Currently: DevSecOps Engineer @ Estrel.ai — WiiZ (Agentic AI SaaS OS)
+Currently: DevOps Lead @ Estrel.ai — WiiZ (Agentic AI SaaS OS)
 
 eshan@cloud:~$ kubectl get results
 NAME                          STATUS
@@ -53,7 +53,7 @@ monolith→microservices        done  ✅
 
 ### 📌 Highlights
 
-- 🔐 **DevSecOps Engineer @ Estrel.ai** — owning CI/CD, cloud infra & security controls for **WiiZ**, an Agentic AI SaaS OS scaling to multi-cloud enterprise deployment
+- 🔐 **DevOps Lead @ Estrel.ai** — owning CI/CD, cloud infra & security controls for **WiiZ**, an Agentic AI SaaS OS scaling to multi-cloud enterprise deployment
 - 🏗️ **Terragrunt IaC** for GCP + on-premises Kubernetes (k3s) — IAM/service accounts, versioned remote state, ingress & Nginx routing; **HashiCorp Vault** for centralized secrets management
 - 🐳 **Docker build optimization** across backend microservices (shared base image + pip cache mounts); implemented **Claim-Check Pattern** for AWS SQS/S3 large-payload workflows
 - 🚀 Cut deployment time **40%** with fully automated Jenkins CI/CD; led monolith → microservices migration on Kubernetes
