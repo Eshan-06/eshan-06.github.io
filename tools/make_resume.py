@@ -63,16 +63,33 @@ para('DevOps Lead  |  Multi-Cloud, Kubernetes & DevSecOps', bold=True, size=12, 
 
 cp = doc.add_paragraph(); cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
 cp.paragraph_format.space_after = Pt(2)
+ICON = 'D:/portfolio/tools/icons/'
+IC = Inches(0.115)
+
 def crun(t):
     r = cp.add_run(t); r.font.size = Pt(10); r.font.color.rgb = DARK
-crun('Lucknow, India  |  +91 7905223208  |  ')
+
+def icon(name):
+    r = cp.add_run(); r.add_picture(ICON + name + '.png', height=IC)
+
+def spacer(): crun('   ')
+
+crun('Lucknow, India')
+crun('   |   ')
+icon('phone'); crun(' ')
+hyperlink(cp, '+91 7905223208', 'tel:+917905223208')
+crun('   |   ')
+icon('mail'); crun(' ')
 hyperlink(cp, 'eshansharma.lko@gmail.com', 'mailto:eshansharma.lko@gmail.com')
-crun('  |  ')
-hyperlink(cp, 'linkedin.com/in/eshan-sharma-66a19ba1', 'https://www.linkedin.com/in/eshan-sharma-66a19ba1/')
-crun('  |  ')
-hyperlink(cp, 'github.com/Eshan-06', 'https://github.com/Eshan-06')
-crun('  |  ')
-hyperlink(cp, 'eshan-06.github.io', 'https://eshan-06.github.io/')
+crun('   |   ')
+icon('linkedin'); crun(' ')
+hyperlink(cp, 'LinkedIn', 'https://www.linkedin.com/in/eshan-sharma-66a19ba1/')
+crun('   |   ')
+icon('github'); crun(' ')
+hyperlink(cp, 'GitHub', 'https://github.com/Eshan-06')
+crun('   |   ')
+icon('globe'); crun(' ')
+hyperlink(cp, 'Portfolio', 'https://eshan-06.github.io/')
 
 # ---------- SUMMARY ----------
 heading('PROFESSIONAL SUMMARY')
