@@ -36,11 +36,13 @@ def heading(text):
     return p
 
 def bullet(text):
-    p = doc.add_paragraph(style='List Bullet')
-    # keep all lines of the bullet together (no mid-bullet page splits)
+    # literal "•" in the text layer (extracts for ATS/reviewers) + hanging indent
+    p = doc.add_paragraph()
     p._p.get_or_add_pPr().append(OxmlElement('w:keepLines'))
-    r = p.add_run(text); r.font.size = Pt(10.5); r.font.color.rgb = DARK
-    p.paragraph_format.space_after = Pt(2)
+    pf = p.paragraph_format
+    pf.left_indent = Inches(0.22); pf.first_line_indent = Inches(-0.14)
+    pf.space_after = Pt(2)
+    r = p.add_run('\u2022  ' + text); r.font.size = Pt(10.5); r.font.color.rgb = DARK
     return p
 
 def job(role, company, date, bullets):
