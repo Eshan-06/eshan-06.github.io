@@ -103,14 +103,12 @@ para('DevOps Lead with 9+ years in IT \u2014 4+ years architecting secure, highl
 # ---------- COMPETENCIES ----------
 heading('TECHNICAL SKILLS')
 comps = [
-    ('Multi-Cloud Architecture:', 'AWS (EC2, EKS, S3, SQS, VPC, IAM, Auto Scaling, SSM), Google Cloud Platform (GKE), Microsoft Azure (exposure), On-Prem Kubernetes (k3s), High Availability & Disaster Recovery'),
-    ('IaC & Automation:', 'Terraform, Terragrunt, CloudFormation, Ansible, Helm, GitOps, Cloud-Agnostic Deployment Patterns'),
-    ('CI/CD & Testing:', 'Jenkins, GitLab CI/CD (self-hosted GitLab CE), GitHub Actions (OIDC federation), Playwright, Docker, Kubernetes (EKS/GKE/k3s), Release Engineering, Rollback & Versioning'),
-    ('DevSecOps & Security:', 'SAST/DAST, VAPT, SonarQube, Snyk, Trivy, OWASP ZAP, HashiCorp Vault, Secrets Management, TLS/PKI, IAM Policy Design, CSP Headers, Zero-Trust'),
-    ('SRE & Observability:', 'Prometheus, Grafana, ELK Stack, Datadog, Custom Observability Platforms (FastAPI + MySQL monitoring DB, React dashboards), Allure Reporting, Incident Management & Root-Cause Analysis, 99.9% Uptime'),
-    ('Compliance & Cost:', 'SOC 2, ISO 27001, GDPR Readiness, Cloud Cost Optimization, Auto-Scaling & Workload Resource Optimization'),
-    ('Data & Platform Services:', 'Milvus Vector DB, PostgreSQL/MySQL, MinIO, Redis, Keycloak SSO, Nginx/Caddy, AWS SQS/S3 Event Patterns'),
-    ('Languages & Platforms:', 'Bash, Python, PowerShell, SQL/NoSQL, Linux, Windows Server, Agentic AI / ML Platform Engineering'),
+    ('Multi-Cloud & Platforms:', 'AWS (EC2, EKS, S3, SQS, VPC, IAM, Auto Scaling, SSM), GCP (GKE), Microsoft Azure (exposure), On-Prem Kubernetes (k3s), HA & DR, Linux, Windows Server'),
+    ('IaC & Automation:', 'Terraform, Terragrunt, CloudFormation, Ansible, Helm, GitOps, Cloud Cost Optimization'),
+    ('CI/CD & Testing:', 'Jenkins, GitLab CI/CD (self-hosted GitLab CE), GitHub Actions (OIDC federation), Playwright, Docker, Kubernetes (EKS/GKE/k3s), Release Engineering'),
+    ('DevSecOps & Compliance:', 'SAST/DAST, VAPT, SonarQube, Snyk, Trivy, OWASP ZAP, HashiCorp Vault, Secrets Management, TLS/PKI, IAM, Zero-Trust, SOC 2, ISO 27001, GDPR readiness'),
+    ('SRE & Observability:', 'Prometheus, Grafana, ELK Stack, Datadog, Custom Observability Platforms (FastAPI + MySQL, React), Allure Reporting, Incident Management & RCA, 99.9% Uptime'),
+    ('Data & Languages:', 'Milvus, PostgreSQL/MySQL, MinIO, Redis, Keycloak SSO, Nginx/Caddy, Bash, Python, PowerShell, SQL/NoSQL, Agentic AI / ML Platforms'),
 ]
 for k, v in comps:
     p = doc.add_paragraph()
@@ -128,7 +126,7 @@ job('DevOps Lead', 'Estrel.ai Pvt. Ltd.', 'Nov 2025 \u2013 Present', [
     'Built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy plus standalone React dashboard for metrics, logs, executions and error summaries across environments; MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
     'Built the test-automation and reporting pipeline: nightly Playwright API runs via GitHub Actions; Allure reports published to private S3 and served on an EC2 host, synced via AWS SSM through GitHub OIDC and IAM roles \u2014 zero stored credentials.',
     'Eliminated recurring frame-upload failures across CV fleet pipelines (upload timeouts raised 30s\u2192120s, SQL execution timeout 55s\u2192300s); implemented the Claim-Check Pattern for AWS SQS (payloads over 250KB offloaded to S3), stopping large-document workflow failures.',
-    'Hardened platform security: CSP headers, rate limiting, S3 IAM role fallback, and SAST/DAST/VAPT scanning integrated into the pipeline; deployed and operated ComplyIQ, the company’s regulatory-compliance product (SOC 2 / ISO 27001 governance), across environments.',
+    'Hardened platform security: CSP headers, rate limiting, S3 IAM role fallback, SAST/DAST/VAPT in the pipeline; deployed and operated ComplyIQ, the company’s regulatory-compliance product (SOC 2 / ISO 27001 governance).',
 ])
 
 job('DevSecOps Engineer', 'Prismberry Technologies', 'Jun 2024 \u2013 Sep 2025', [

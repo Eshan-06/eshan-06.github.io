@@ -44,8 +44,9 @@ const EXPERIENCE = [
     role: 'DevOps Lead', company: 'Estrel.ai Pvt. Ltd.', date: 'Nov 2025 — Present',
     points: [
       'DevOps Lead on WiiZ, Estrel AI\'s Agentic AI SaaS Operating System — own CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
-      'Built Terragrunt-based IaC for GCP and on-premises Kubernetes (k3s); deployed HashiCorp Vault, migrating hard-coded API keys to secret-manager lookups.',
-      'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled dev/sandbox/prod builds, rollback/versioning workflows, PR governance; optimized Docker builds with multi-stage Dockerfiles, BuildKit cache mounts and layer slimming (build deps stripped from runtime images) across ~10 backend services — ~50% faster rebuilds and leaner, more secure images.',
+      'Migrated hard-coded API keys to HashiCorp Vault secret-manager lookups; built Terragrunt IaC for GCP and on-premises k3s (IAM roles, versioned remote state, Nginx ingress).',
+      'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled builds across dev, sandbox and prod; rollback and versioning; PR governance.',
+      'Optimized Docker builds with multi-stage Dockerfiles and BuildKit cache mounts across ~10 backend services — ~50% faster rebuilds and leaner, more secure images.',
       'Designed and built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy + standalone React dashboard with metrics, logs, executions and error summaries across environments; per-env MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
       'Built the test-automation & reporting pipeline: Playwright API suite (credential-free contract/isolation gate + authenticated behaviour/security jobs) running nightly via GitHub Actions; Allure reports published to private S3 and served on an EC2 report host via AWS SSM through GitHub OIDC + IAM instance roles — zero stored credentials.',
       'Implemented the Claim-Check Pattern for AWS SQS (payloads >250KB offloaded to S3); built driver-manager service for ODBC/RDBMS connectivity with driver pre-warming and env-driven CORS.',
