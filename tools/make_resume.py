@@ -103,7 +103,7 @@ para('DevOps Lead with 9+ years in IT \u2014 4+ years architecting secure, highl
 # ---------- COMPETENCIES ----------
 heading('TECHNICAL SKILLS')
 comps = [
-    ('Multi-Cloud & Platforms:', 'AWS (EC2, EKS, S3, SQS, VPC, IAM, Auto Scaling, SSM), GCP (GKE), Microsoft Azure (exposure), On-Prem Kubernetes (k3s), HA & DR, Linux, Windows Server'),
+    ('Multi-Cloud & Platforms:', 'AWS (EC2, EKS, S3, SQS, VPC, IAM, Auto Scaling, SSM), GCP (GKE), Microsoft Azure (exposure), On-prem k3s, HA & DR, Linux, Windows Server'),
     ('IaC & Automation:', 'Terraform, Terragrunt, CloudFormation, Ansible, Helm, GitOps, Cloud Cost Optimization'),
     ('CI/CD & Testing:', 'Jenkins, GitLab CI/CD (self-hosted GitLab CE), GitHub Actions (OIDC federation), Playwright, Docker, Kubernetes (EKS/GKE/k3s), Release Engineering'),
     ('DevSecOps & Compliance:', 'SAST/DAST, VAPT, SonarQube, Snyk, Trivy, OWASP ZAP, HashiCorp Vault, Secrets Management, TLS/PKI, IAM, Zero-Trust, SOC 2, ISO 27001, GDPR readiness'),
@@ -121,7 +121,7 @@ heading('PROFESSIONAL EXPERIENCE')
 
 job('DevOps Lead', 'Estrel.ai Pvt. Ltd.', 'Nov 2025 \u2013 Present', [
     'DevOps Lead on WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 own CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
-    'Migrated hard-coded API keys to HashiCorp Vault secret-manager lookups; built Terragrunt IaC for GCP and on-premises k3s (IAM roles, versioned remote state, Nginx ingress).',
+    'Migrated hard-coded API keys to HashiCorp Vault secret-manager lookups; built Terragrunt IaC for GCP and k3s on-prem (IAM roles, versioned remote state, Nginx ingress).',
     'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled builds across dev, sandbox and prod; rollback and versioning; PR governance.',
     'Optimized Docker builds with multi-stage Dockerfiles and BuildKit cache mounts across ~10 backend services \u2014 ~50% faster rebuilds and leaner, more secure images.',
     'Built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy plus standalone React dashboard for metrics, logs, executions and error summaries across environments; MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
