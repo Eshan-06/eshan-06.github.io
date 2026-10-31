@@ -49,7 +49,7 @@ const EXPERIENCE = [
       'Designed and built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy + standalone React dashboard with metrics, logs, executions and error summaries across environments; per-env MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
       'Built the test-automation & reporting pipeline: Playwright API suite (credential-free contract/isolation gate + authenticated behaviour/security jobs) running nightly via GitHub Actions; Allure reports published to private S3 and served on an EC2 report host via AWS SSM through GitHub OIDC + IAM instance roles — zero stored credentials.',
       'Implemented the Claim-Check Pattern for AWS SQS (payloads >250KB offloaded to S3); built driver-manager service for ODBC/RDBMS connectivity with driver pre-warming and env-driven CORS.',
-      'Raised reliability & security: eliminated frame-upload read-timeouts (30s→120s), raised SQL execution timeout 55s→300s; CSP headers, rate limiting, S3 IAM instance-role fallback, pipeline-integrated SAST/DAST/VAPT (SOC 2 / ISO 27001 readiness).',
+      'Raised reliability & security: eliminated frame-upload read-timeouts (30s→120s), raised SQL execution timeout 55s→300s; CSP headers, rate limiting, S3 IAM role fallback, SAST/DAST/VAPT integrated into the pipeline; deployed and operated ComplyIQ, the company’s regulatory-compliance product (SOC 2 / ISO 27001 governance).',
     ],
   },
   {

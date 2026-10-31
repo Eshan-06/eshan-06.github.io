@@ -128,7 +128,7 @@ job('DevOps Lead', 'Estrel.ai Pvt. Ltd.', 'Nov 2025 \u2013 Present', [
     'Built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy plus standalone React dashboard for metrics, logs, executions and error summaries across environments; MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
     'Built the test-automation and reporting pipeline: nightly Playwright API runs via GitHub Actions; Allure reports published to private S3 and served on an EC2 host, synced via AWS SSM through GitHub OIDC and IAM roles \u2014 zero stored credentials.',
     'Eliminated recurring frame-upload failures across CV fleet pipelines (upload timeouts raised 30s\u2192120s, SQL execution timeout 55s\u2192300s); implemented the Claim-Check Pattern for AWS SQS (payloads over 250KB offloaded to S3), stopping large-document workflow failures.',
-    'Hardened platform security: CSP headers, rate limiting, S3 IAM role fallback, and SAST/DAST/VAPT scanning integrated into the pipeline (SOC 2 / ISO 27001 readiness); operate production web properties (Next.js) across environments.',
+    'Hardened platform security: CSP headers, rate limiting, S3 IAM role fallback, and SAST/DAST/VAPT scanning integrated into the pipeline; deployed and operated ComplyIQ, the company’s regulatory-compliance product (SOC 2 / ISO 27001 governance), across environments.',
 ])
 
 job('DevSecOps Engineer', 'Prismberry Technologies', 'Jun 2024 \u2013 Sep 2025', [
