@@ -8,10 +8,10 @@ const GITHUB_USER = 'Eshan-06';
 /* ---------------- Skills ---------------- */
 const SKILLS = [
   { icon: '☁', title: 'Multi-Cloud Architecture', tags: ['AWS (EC2, EKS, S3, VPC, IAM, Auto Scaling)', 'Microsoft Azure', 'GCP (GKE)', 'HA & Disaster Recovery'] },
-  { icon: '⌘', title: 'IaC & Automation', tags: ['Terraform', 'Terragrunt', 'Ansible', 'Helm', 'GitOps', 'Cloud-Agnostic Patterns'] },
-  { icon: '⚙', title: 'CI/CD & Containers', tags: ['Jenkins', 'GitLab CI/CD', 'GitHub Actions (OIDC)', 'Docker', 'Kubernetes (EKS/GKE/k3s)', 'Release Engineering'] },
+  { icon: '⌘', title: 'IaC & Automation', tags: ['Terraform', 'Terragrunt', 'CloudFormation', 'Ansible', 'Helm', 'GitOps', 'Cloud-Agnostic Patterns'] },
+  { icon: '⚙', title: 'CI/CD & Containers', tags: ['Jenkins', 'GitLab CI/CD', 'GitHub Actions (OIDC)', 'Playwright', 'Docker', 'Kubernetes (EKS/GKE/k3s)', 'Release Engineering'] },
   { icon: '🛡', title: 'DevSecOps & Security', tags: ['SAST/DAST', 'VAPT', 'SonarQube', 'Snyk', 'Trivy', 'OWASP ZAP', 'HashiCorp Vault', 'Secrets Management', 'TLS/PKI', 'IAM', 'Zero-Trust'] },
-  { icon: '📈', title: 'SRE & Observability', tags: ['Prometheus', 'Grafana', 'ELK Stack', 'Custom Observability (FastAPI + MySQL)', 'Allure Reporting', 'Playwright', 'Incident Mgmt', '99.9% Uptime'] },
+  { icon: '📈', title: 'SRE & Observability', tags: ['Custom Observability (FastAPI + MySQL)', 'Datadog', 'Allure Reporting', 'Incident Mgmt', '99.9% Uptime'] },
   { icon: '✓', title: 'Compliance & Cost', tags: ['SOC 2', 'ISO 27001', 'GDPR Readiness', 'Cloud Cost Optimization', 'Auto-Scaling'] },
   { icon: '❯', title: 'Languages & Platforms', tags: ['Bash', 'Python', 'PowerShell', 'SQL/NoSQL', 'Linux', 'Windows Server', 'Agentic AI / ML Platforms'] },
 ];
