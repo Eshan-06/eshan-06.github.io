@@ -42,6 +42,8 @@ def bullet(text):
 def job(role, company, date, bullets):
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(6); p.paragraph_format.space_after = Pt(1)
+    # keep job heading glued to its first bullet (no orphan at page break)
+    p._p.get_or_add_pPr().append(OxmlElement('w:keepNext'))
     p.paragraph_format.tab_stops.add_tab_stop(Inches(7.3), WD_TAB_ALIGNMENT.RIGHT)
     r = p.add_run(f'{role} | {company}'); r.bold = True; r.font.size = Pt(11); r.font.color.rgb = DARK
     r2 = p.add_run(f'\t{date}'); r2.bold = True; r2.font.size = Pt(10); r2.font.color.rgb = ACCENT
@@ -83,34 +85,32 @@ icon('mail'); crun(' ')
 hyperlink(cp, 'eshansharma.lko@gmail.com', 'mailto:eshansharma.lko@gmail.com')
 crun('   |   ')
 icon('linkedin'); crun(' ')
-hyperlink(cp, 'LinkedIn', 'https://www.linkedin.com/in/eshan-sharma-66a19ba1/')
+hyperlink(cp, 'linkedin.com/in/eshan-sharma-66a19ba1', 'https://www.linkedin.com/in/eshan-sharma-66a19ba1/')
 crun('   |   ')
 icon('github'); crun(' ')
-hyperlink(cp, 'GitHub', 'https://github.com/Eshan-06')
+hyperlink(cp, 'github.com/Eshan-06', 'https://github.com/Eshan-06')
 crun('   |   ')
 icon('globe'); crun(' ')
-hyperlink(cp, 'Portfolio', 'https://eshan-06.github.io/')
+hyperlink(cp, 'eshan-06.github.io', 'https://eshan-06.github.io/')
 
 # ---------- SUMMARY ----------
 heading('PROFESSIONAL SUMMARY')
-para('DevOps/DevSecOps engineer with 9+ years in IT \u2014 4+ years architecting secure, highly available, multi-cloud '
+para('DevOps Lead with 9+ years in IT \u2014 4+ years architecting secure, highly available, multi-cloud '
      'infrastructure (AWS, Azure, GCP) and end-to-end CI/CD for SaaS products, preceded by 5 years of application '
-     'development and support. Currently DevOps Lead on WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 '
-     'owning Terragrunt-based IaC across GCP and on-premises Kubernetes (k3s), Docker build/release pipelines, '
-     'Vault-backed secrets management, and security controls as the platform scales multi-cloud, globally. '
-     'Cut deployment time 40%, sustained 99.9% uptime, remediated 120+ vulnerabilities via SAST/DAST/VAPT, and led '
-     'monolith-to-microservices migrations on Kubernetes.')
+     'development and support. Currently leading DevOps & DevSecOps at Estrel.ai for WiiZ, an Agentic AI SaaS '
+     'Operating System, as it scales to multi-cloud enterprise deployment. Track record: 40% faster deployments, '
+     '99.9% uptime, 120+ vulnerabilities remediated, monolith-to-microservices migrations on Kubernetes.')
 
 # ---------- COMPETENCIES ----------
-heading('CORE COMPETENCIES')
+heading('TECHNICAL SKILLS')
 comps = [
-    ('Multi-Cloud Architecture:', 'AWS (EC2, EKS, S3, VPC, IAM, Auto Scaling), Microsoft Azure, Google Cloud Platform (GKE), On-Prem Kubernetes (k3s), High Availability & Disaster Recovery'),
-    ('IaC & Automation:', 'Terraform, Terragrunt, CloudFormation, Ansible, Helm, GitOps, Cloud-Agnostic Deployment Patterns'),
-    ('CI/CD & Containers:', 'Jenkins, GitLab CI/CD (self-hosted GitLab CE), GitHub Actions, ArgoCD, Docker, Kubernetes (EKS/GKE/k3s), Release Engineering, Rollback & Versioning'),
+    ('Multi-Cloud Architecture:', 'AWS (EC2, EKS, S3, SQS, VPC, IAM, Auto Scaling, SSM), Microsoft Azure, Google Cloud Platform (GKE), On-Prem Kubernetes (k3s), High Availability & Disaster Recovery'),
+    ('IaC & Automation:', 'Terraform, Terragrunt, Ansible, Helm, GitOps, Cloud-Agnostic Deployment Patterns'),
+    ('CI/CD & Containers:', 'Jenkins, GitLab CI/CD (self-hosted GitLab CE), GitHub Actions (OIDC federation), Docker, Kubernetes (EKS/GKE/k3s), Release Engineering, Rollback & Versioning'),
     ('DevSecOps & Security:', 'SAST/DAST, VAPT, SonarQube, Snyk, Trivy, OWASP ZAP, HashiCorp Vault, Secrets Management, TLS/PKI, IAM Policy Design, CSP Headers, Zero-Trust'),
-    ('SRE & Observability:', 'Prometheus, Grafana, ELK Stack, Datadog, Fluentd, SLAs/SLOs & Error Budgets, Incident Management & Root-Cause Analysis, 99.9% Uptime'),
+    ('SRE & Observability:', 'Prometheus, Grafana, ELK Stack, Custom Observability Platforms (FastAPI + MySQL), Allure Reporting, Incident Management & Root-Cause Analysis, 99.9% Uptime'),
     ('Compliance & Cost:', 'SOC 2, ISO 27001, GDPR Readiness, Cloud Cost Optimization, Auto-Scaling & Workload Resource Optimization'),
-    ('Data & Platform Services:', 'Milvus Vector DB, PostgreSQL/MySQL, MinIO, Redis, Keycloak SSO, Nginx/Caddy, AWS SQS/S3 Event Patterns'),
+    ('Data & Platform Services:', 'Milvus Vector DB, PostgreSQL/MySQL, MinIO, Redis, Keycloak SSO, Nginx/Caddy, AWS SQS/S3 Event Patterns, Playwright'),
     ('Languages & Platforms:', 'Bash, Python, PowerShell, SQL/NoSQL, Linux, Windows Server, Agentic AI / ML Platform Engineering'),
 ]
 for k, v in comps:
@@ -122,16 +122,17 @@ for k, v in comps:
 # ---------- EXPERIENCE ----------
 heading('PROFESSIONAL EXPERIENCE')
 
-job('DevOps Lead', 'Estrel.ai Pvt. Ltd. \u2014 WiiZ (Agentic AI SaaS OS)', 'Nov 2025 \u2013 Present', [
-    'Own DevSecOps for WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
+job('DevOps Lead', 'Estrel.ai Pvt. Ltd.', 'Nov 2025 \u2013 Present', [
+    'DevOps Lead on WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 own CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment; operate production web properties (Next.js) and CV fleet-processing pipelines across dev/test/prod.',
     'Built Terragrunt-based IaC for GCP and on-premises Kubernetes (k3s) \u2014 service accounts/IAM roles, versioned remote state, ingress and Nginx routing; deployed HashiCorp Vault, migrating hard-coded API keys to secret-manager lookups.',
     'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled dev/sandbox/prod builds, rollback/versioning workflows, PR governance; optimized Docker builds (shared base image + pip cache mounts) cutting build times.',
+    'Designed and built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy + standalone React dashboard giving multi-env real-time metrics, logs, executions and error summaries via /monitoring/* APIs; per-environment MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated, served behind SSL-terminating Nginx.',
+    'Built the test-automation & reporting pipeline: Playwright API suite (credential-free contract/isolation gate + authenticated behaviour/security jobs) running nightly via GitHub Actions; Allure reports published to a private S3 bucket and served on an EC2 report host, synced via AWS SSM through GitHub OIDC + IAM instance roles \u2014 zero stored credentials.',
     'Implemented the Claim-Check Pattern for AWS SQS (payloads >250KB offloaded to S3 with pointer messages), eliminating large-document workflow failures; built driver-manager service for ODBC/RDBMS connectivity with driver pre-warming and env-driven CORS.',
-    'Hardened platform security: Content-Security-Policy headers, rate limiting, S3 IAM instance-role fallback, and pipeline-integrated SAST/DAST/VAPT scanning (SOC 2 / ISO 27001 readiness).',
-    'Deployed and operated WiiZ web properties (Next.js) and CV fleet-processing pipelines across dev/test/prod environments.',
+    'Raised reliability & security: eliminated frame-upload read-timeouts (30s\u2192120s), raised SQL execution timeout 55s\u2192300s; hardened with CSP headers, rate limiting, S3 IAM instance-role fallback and pipeline-integrated SAST/DAST/VAPT (SOC 2 / ISO 27001 readiness).',
 ])
 
-job('DevSecOps Engineer', 'Prismberry Technologies', 'Jun 2024 \u2013 Oct 2025', [
+job('DevSecOps Engineer', 'Prismberry Technologies', 'Jun 2024 \u2013 Sep 2025', [
     'Engineered AWS infrastructure for BizUp USA (bizupusa.com) with Terragrunt/Terraform modules: VPC, RDS, ALB, k3s Kubernetes nodes, Route53 DNS and SES email.',
     'Deployed and operated self-hosted platform services: GitLab CE with CI runners, Keycloak SSO, Milvus vector database, MinIO object storage, Caddy reverse proxy, and Firezone VPN.',
     'Architected and deployed a fully automated CI/CD pipeline using Jenkins, reducing average deployment time by 40% and enabling multiple daily production releases.',
@@ -149,7 +150,7 @@ job('Deployment Lead', 'Akal Information Systems Ltd.', 'May 2022 \u2013 Sep 202
     'Administered core AWS services (EC2, IAM, VPC, S3) and Kubernetes clusters; built initial CI/CD pipeline frameworks to automate build and deployment processes for enterprise applications.',
 ])
 
-job('Developer', 'SISL Infotech', 'Mar 2018 \u2013 Apr 2022', [
+job('Developer', 'SISL Infotech', 'Feb 2018 \u2013 Apr 2022', [
     'Developed and maintained Java applications (Tomcat, Nginx, JBoss) on AWS-managed Linux VMs; handled deployments, vulnerability assessments and patching \u2014 early cloud/infrastructure operations exposure.',
 ])
 
@@ -160,10 +161,8 @@ job('Assistant Programmer', 'Eccentric Infotech', 'Jan 2017 \u2013 Jan 2018', [
 # ---------- KEY PROJECTS ----------
 heading('KEY PROJECTS')
 projects = [
-    ('WiiZ Platform DevSecOps (Estrel.ai):', 'Terragrunt IaC (GCP + on-prem k3s), Vault secrets, Docker build optimization, SQS/S3 claim-check pattern, CSP hardening, multi-environment release automation.'),
-    ('BizUp USA Cloud Infrastructure (Prismberry):', 'Production AWS platform \u2014 Terragrunt-managed VPC/RDS/ALB/k3s, self-hosted GitLab CE + CI runners, Keycloak SSO, Milvus, MinIO, Caddy, Firezone VPN.'),
     ('DevSecOps Auto-Remediation Demo (Estrel.ai):', '3-stage CI/CD pipeline (build \u2192 migrate \u2192 deploy) to AWS EC2; on failure, error context is sent to WiiZ agents for automated root-cause analysis and fixes.'),
-    ('Personal Portfolio & GitHub Pages:', 'Responsive portfolio (eshan-06.github.io) \u2014 pure HTML/CSS/JS, live GitHub repo integration.'),
+    ('WiiZ Monitoring Hub & Test-Report Hosting:', 'Central multi-env observability (monitor.wiiz.it) + Playwright/Allure test reports served securely via S3 + SSM + OIDC \u2014 full details in experience.'),
 ]
 for k, v in projects:
     p = doc.add_paragraph()

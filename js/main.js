@@ -8,17 +8,23 @@ const GITHUB_USER = 'Eshan-06';
 /* ---------------- Skills ---------------- */
 const SKILLS = [
   { icon: '☁', title: 'Multi-Cloud Architecture', tags: ['AWS (EC2, EKS, S3, VPC, IAM, Auto Scaling)', 'Microsoft Azure', 'GCP (GKE)', 'HA & Disaster Recovery'] },
-  { icon: '⌘', title: 'IaC & Automation', tags: ['Terraform', 'CloudFormation', 'Ansible', 'Helm', 'GitOps', 'Cloud-Agnostic Patterns'] },
-  { icon: '⚙', title: 'CI/CD & Containers', tags: ['Jenkins', 'GitLab CI/CD', 'GitHub Actions', 'ArgoCD', 'Docker', 'Kubernetes (EKS/GKE)', 'Release Engineering'] },
-  { icon: '🛡', title: 'DevSecOps & Security', tags: ['SAST/DAST', 'VAPT', 'SonarQube', 'Snyk', 'Trivy', 'OWASP ZAP', 'Secrets Management', 'TLS/PKI', 'IAM', 'Zero-Trust'] },
-  { icon: '📈', title: 'SRE & Observability', tags: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog', 'Fluentd', 'SLAs/SLOs', 'Error Budgets', 'Incident Mgmt'] },
+  { icon: '⌘', title: 'IaC & Automation', tags: ['Terraform', 'Terragrunt', 'Ansible', 'Helm', 'GitOps', 'Cloud-Agnostic Patterns'] },
+  { icon: '⚙', title: 'CI/CD & Containers', tags: ['Jenkins', 'GitLab CI/CD', 'GitHub Actions (OIDC)', 'Docker', 'Kubernetes (EKS/GKE/k3s)', 'Release Engineering'] },
+  { icon: '🛡', title: 'DevSecOps & Security', tags: ['SAST/DAST', 'VAPT', 'SonarQube', 'Snyk', 'Trivy', 'OWASP ZAP', 'HashiCorp Vault', 'Secrets Management', 'TLS/PKI', 'IAM', 'Zero-Trust'] },
+  { icon: '📈', title: 'SRE & Observability', tags: ['Prometheus', 'Grafana', 'ELK Stack', 'Custom Observability (FastAPI + MySQL)', 'Allure Reporting', 'Playwright', 'Incident Mgmt', '99.9% Uptime'] },
   { icon: '✓', title: 'Compliance & Cost', tags: ['SOC 2', 'ISO 27001', 'GDPR Readiness', 'Cloud Cost Optimization', 'Auto-Scaling'] },
   { icon: '❯', title: 'Languages & Platforms', tags: ['Bash', 'Python', 'PowerShell', 'SQL/NoSQL', 'Linux', 'Windows Server', 'Agentic AI / ML Platforms'] },
 ];
 
 /* ---------------- Featured Projects ---------------- */
 const PROJECTS = [
-  { icon: '🛡', name: 'WiiZ Platform DevSecOps', org: 'Estrel.ai', link: '',
+  { icon: '�', name: 'WiiZ Monitoring Hub', org: 'Estrel.ai · monitor.wiiz.it', link: '',
+    desc: 'Central multi-environment observability platform: FastAPI hub proxy + standalone React dashboard with real-time metrics, logs, executions and error summaries; per-env MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
+    tags: ['Observability', 'FastAPI', 'React', 'MySQL', 'Nginx', 'Docker'] },
+  { icon: '🧪', name: 'Test-Automation & Report Hosting', org: 'Estrel.ai', link: '',
+    desc: 'Playwright API suite (credential-free contract/isolation gate + authenticated behaviour/security jobs) running nightly via GitHub Actions; Allure reports published to private S3 and served on an EC2 host via AWS SSM through GitHub OIDC + IAM roles — zero stored credentials.',
+    tags: ['Playwright', 'GitHub Actions', 'Allure', 'OIDC', 'AWS SSM', 'S3'] },
+  { icon: '�🛡', name: 'WiiZ Platform DevSecOps', org: 'Estrel.ai', link: '',
     desc: 'End-to-end platform engineering — Terragrunt IaC (GCP + on-prem k3s), Vault secrets management, Docker build optimization, SQS/S3 claim-check pattern, CSP hardening, multi-environment release automation.',
     tags: ['Terragrunt', 'GCP', 'k3s', 'Vault', 'Docker', 'CSP'] },
   { icon: '☁', name: 'BizUp USA Cloud Infrastructure', org: 'Prismberry', link: '',
@@ -35,20 +41,19 @@ const PROJECTS = [
 /* ---------------- Experience ---------------- */
 const EXPERIENCE = [
   {
-    role: 'DevOps Lead', company: 'Estrel.ai — WiiZ (Agentic AI SaaS OS)', date: 'Nov 2025 — Present',
+    role: 'DevOps Lead', company: 'Estrel.ai Pvt. Ltd.', date: 'Nov 2025 — Present',
     points: [
-      'Own DevSecOps for WiiZ, Estrel AI\'s Agentic AI SaaS Operating System — CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
-      'Built Terragrunt-based IaC for GCP and on-premises Kubernetes (k3s): service accounts and IAM roles, versioned remote state buckets, ingress and Nginx routing for hub backend, sandbox and dev environments.',
-      'Deployed HashiCorp Vault on k3s for centralized secrets management; migrated API keys from hard-coded values to secret-manager lookups across backend microservices.',
-      'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled dev/sandbox/prod builds, rollback and versioning workflows, PR review/merge governance.',
-      'Optimized Docker builds across backend microservices — shared base image with pip cache mounts and trimmed builder stages — significantly cutting build times.',
-      'Implemented the Claim-Check Pattern for AWS SQS (payloads >250KB offloaded to S3 with pointer messages), eliminating execution failures for large-document workflows.',
-      'Built the driver-manager service for custom database connectivity (ODBC/RDBMS workflow nodes) with driver pre-warming, version checks, and env-driven CORS allowlists.',
-      'Hardened platform security: CSP headers, rate limiting, S3 IAM instance-role fallback, and pipeline-integrated SAST/DAST/VAPT scanning (SOC 2 / ISO 27001 readiness).',
+      'DevOps Lead on WiiZ, Estrel AI\'s Agentic AI SaaS Operating System — own CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
+      'Built Terragrunt-based IaC for GCP and on-premises Kubernetes (k3s); deployed HashiCorp Vault, migrating hard-coded API keys to secret-manager lookups.',
+      'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled dev/sandbox/prod builds, rollback/versioning workflows, PR governance; optimized Docker builds (shared base image + pip cache mounts).',
+      'Designed and built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy + standalone React dashboard with multi-env real-time metrics, logs, executions and error summaries; per-env MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
+      'Built the test-automation & reporting pipeline: Playwright API suite (credential-free contract/isolation gate + authenticated behaviour/security jobs) running nightly via GitHub Actions; Allure reports published to private S3 and served on an EC2 report host via AWS SSM through GitHub OIDC + IAM instance roles — zero stored credentials.',
+      'Implemented the Claim-Check Pattern for AWS SQS (payloads >250KB offloaded to S3); built driver-manager service for ODBC/RDBMS connectivity with driver pre-warming and env-driven CORS.',
+      'Raised reliability & security: eliminated frame-upload read-timeouts (30s→120s), raised SQL execution timeout 55s→300s; CSP headers, rate limiting, S3 IAM instance-role fallback, pipeline-integrated SAST/DAST/VAPT (SOC 2 / ISO 27001 readiness).',
     ],
   },
   {
-    role: 'DevSecOps Engineer', company: 'Prismberry Technologies', date: 'Jun 2024 — Oct 2025',
+    role: 'DevSecOps Engineer', company: 'Prismberry Technologies', date: 'Jun 2024 — Sep 2025',
     points: [
       'Engineered AWS infrastructure for BizUp USA (bizupusa.com) with Terragrunt/Terraform modules: VPC, RDS, ALB, k3s Kubernetes nodes, Route53 DNS and SES email.',
       'Deployed and operated self-hosted platform services: GitLab CE with CI runners, Keycloak SSO, Milvus vector database, MinIO object storage, Caddy reverse proxy, and Firezone VPN.',
@@ -73,7 +78,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    role: 'Developer', company: 'SISL Infotech', date: 'Mar 2018 — Apr 2022',
+    role: 'Developer', company: 'SISL Infotech', date: 'Feb 2018 — Apr 2022',
     points: [
       'Developed and maintained Java applications (Tomcat, Nginx, JBoss) on AWS-managed Linux VMs; handled deployments, vulnerability assessments and patching — early cloud/infrastructure operations exposure.',
     ],

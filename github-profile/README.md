@@ -36,8 +36,8 @@ Apply complete! Resources: 3 clouds, 0 downtime. 🚀
 | | |
 |---|---|
 | **☁️ Cloud** | AWS (EC2 · EKS · S3 · VPC · IAM · Auto Scaling) · Azure · GCP (GKE) · On-prem k3s · HA & DR |
-| **🏗️ IaC & GitOps** | Terraform · Terragrunt · CloudFormation · Ansible · Helm · ArgoCD |
-| **⚙️ CI/CD** | Jenkins · GitLab CI/CD (self-hosted GitLab CE) · GitHub Actions · Docker · Kubernetes · Release Engineering |
+| **🏗️ IaC & GitOps** | Terraform · Terragrunt · Ansible · Helm · GitOps |
+| **⚙️ CI/CD** | Jenkins · GitLab CI/CD (self-hosted GitLab CE) · GitHub Actions (OIDC) · Docker · Kubernetes · Release Engineering |
 | **🛡️ DevSecOps** | SAST/DAST · VAPT · SonarQube · Snyk · Trivy · OWASP ZAP · HashiCorp Vault · TLS/PKI · Zero-Trust |
 | **📈 Observability** | Prometheus · Grafana · ELK · Datadog · Fluentd · SLAs/SLOs · Error Budgets |
 | **✅ Compliance** | SOC 2 · ISO 27001 · GDPR readiness · Cloud cost optimization |
@@ -62,7 +62,9 @@ Apply complete! Resources: 3 clouds, 0 downtime. 🚀
 
 - 🔐 **DevOps Lead @ Estrel.ai** — owning CI/CD, cloud infra & security controls for **WiiZ**, an Agentic AI SaaS OS scaling to multi-cloud enterprise deployment
 - 🏗️ **Terragrunt IaC** for GCP + on-premises Kubernetes (k3s) — IAM/service accounts, versioned remote state, ingress & Nginx routing; **HashiCorp Vault** for centralized secrets management
-- 🐳 **Docker build optimization** across backend microservices (shared base image + pip cache mounts); implemented **Claim-Check Pattern** for AWS SQS/S3 large-payload workflows
+- � Built the **platform observability stack** ([monitor.wiiz.it](https://monitor.wiiz.it)) — FastAPI hub + React dashboard, multi-env metrics/logs/executions, partitioned MySQL monitoring DB with 14-day retention
+- 🧪 Built **Playwright test-automation & Allure report hosting** — nightly GitHub Actions, private S3 → EC2 via **AWS SSM + OIDC + IAM roles** (zero stored credentials)
+- �🐳 **Docker build optimization** across backend microservices (shared base image + pip cache mounts); implemented **Claim-Check Pattern** for AWS SQS/S3 large-payload workflows
 - 🚀 Cut deployment time **40%** with fully automated Jenkins CI/CD; led monolith → microservices migration on Kubernetes
 - 🛡️ Remediated **120+ critical vulnerabilities** via pipeline-integrated SAST/DAST/VAPT
 - 🏢 Built **BizUp USA** production AWS platform (Terragrunt): VPC/RDS/ALB/k3s, self-hosted GitLab CE + runners, Keycloak SSO, Milvus, MinIO, Caddy, Firezone
