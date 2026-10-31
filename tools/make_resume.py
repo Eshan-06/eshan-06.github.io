@@ -121,7 +121,7 @@ heading('PROFESSIONAL EXPERIENCE')
 
 job('DevOps Lead', 'Estrel.ai Pvt. Ltd.', 'Nov 2025 \u2013 Present', [
     'DevOps Lead on WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 own CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
-    'Migrated hard-coded API keys to HashiCorp Vault secret-manager lookups; built Terragrunt IaC for GCP and k3s on-prem (IAM roles, versioned remote state, Nginx ingress).',
+    'Migrated hard-coded API keys to HashiCorp Vault secret-manager lookups; built Terragrunt IaC for GCP and Kubernetes clusters (IAM roles, versioned remote state, Nginx ingress).',
     'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled builds across dev, sandbox and prod; rollback and versioning; PR governance.',
     'Optimized Docker builds with multi-stage Dockerfiles and BuildKit cache mounts across ~10 backend services \u2014 ~50% faster rebuilds and leaner, more secure images.',
     'Built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy plus standalone React dashboard for metrics, logs, executions and error summaries across environments; MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
