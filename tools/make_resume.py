@@ -26,6 +26,8 @@ def para(text='', bold=False, size=10.5, color=DARK, space_after=2, align=None):
 
 def heading(text):
     p = doc.add_paragraph()
+    # heading can never be orphaned at a page bottom
+    p._p.get_or_add_pPr().append(OxmlElement('w:keepNext'))
     r = p.add_run(text); r.bold = True; r.font.size = Pt(11.5); r.font.color.rgb = ACCENT
     p.paragraph_format.space_before = Pt(8); p.paragraph_format.space_after = Pt(3)
     pPr = p._p.get_or_add_pPr(); pbdr = OxmlElement('w:pBdr')
@@ -103,7 +105,7 @@ comps = [
     ('IaC & Automation:', 'Terraform, Terragrunt, CloudFormation, Ansible, Helm, GitOps, Cloud-Agnostic Deployment Patterns'),
     ('CI/CD & Testing:', 'Jenkins, GitLab CI/CD (self-hosted GitLab CE), GitHub Actions (OIDC federation), Playwright, Docker, Kubernetes (EKS/GKE/k3s), Release Engineering, Rollback & Versioning'),
     ('DevSecOps & Security:', 'SAST/DAST, VAPT, SonarQube, Snyk, Trivy, OWASP ZAP, HashiCorp Vault, Secrets Management, TLS/PKI, IAM Policy Design, CSP Headers, Zero-Trust'),
-    ('SRE & Observability:', 'Custom Observability Platforms (FastAPI + MySQL monitoring DB, React dashboards), Datadog, Allure Reporting, Incident Management & Root-Cause Analysis, 99.9% Uptime'),
+    ('SRE & Observability:', 'Prometheus, Grafana, ELK Stack, Datadog, Custom Observability Platforms (FastAPI + MySQL monitoring DB, React dashboards), Allure Reporting, Incident Management & Root-Cause Analysis, 99.9% Uptime'),
     ('Compliance & Cost:', 'SOC 2, ISO 27001, GDPR Readiness, Cloud Cost Optimization, Auto-Scaling & Workload Resource Optimization'),
     ('Data & Platform Services:', 'Milvus Vector DB, PostgreSQL/MySQL, MinIO, Redis, Keycloak SSO, Nginx/Caddy, AWS SQS/S3 Event Patterns'),
     ('Languages & Platforms:', 'Bash, Python, PowerShell, SQL/NoSQL, Linux, Windows Server, Agentic AI / ML Platform Engineering'),
@@ -121,7 +123,7 @@ job('DevOps Lead', 'Estrel.ai Pvt. Ltd.', 'Nov 2025 \u2013 Present', [
     'DevOps Lead on WiiZ, Estrel AI\u2019s Agentic AI SaaS Operating System \u2014 own CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
     'Built Terragrunt-based IaC for GCP and on-premises Kubernetes (k3s) \u2014 IAM roles, versioned remote state, ingress and Nginx routing; deployed HashiCorp Vault and migrated hard-coded API keys to secret-manager lookups.',
     'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled builds across dev, sandbox and prod; rollback and versioning workflows; PR governance; optimized Docker builds (shared base image + pip cache mounts).',
-    'Built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy plus standalone React dashboard for multi-environment metrics, logs, executions and error summaries; MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
+    'Built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy plus standalone React dashboard for metrics, logs, executions and error summaries across environments; MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
     'Built the test-automation and reporting pipeline: nightly Playwright API runs via GitHub Actions; Allure reports published to private S3 and served on an EC2 host, synced via AWS SSM through GitHub OIDC and IAM roles \u2014 zero stored credentials.',
     'Eliminated recurring frame-upload failures across CV fleet pipelines (upload timeouts raised 30s\u2192120s, SQL execution timeout 55s\u2192300s); implemented the Claim-Check Pattern for AWS SQS (payloads over 250KB offloaded to S3), stopping large-document workflow failures.',
     'Hardened platform security: CSP headers, rate limiting, S3 IAM role fallback, and SAST/DAST/VAPT scanning integrated into the pipeline (SOC 2 / ISO 27001 readiness); operate production web properties (Next.js) across environments.',

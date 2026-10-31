@@ -11,7 +11,7 @@ const SKILLS = [
   { icon: '⌘', title: 'IaC & Automation', tags: ['Terraform', 'Terragrunt', 'CloudFormation', 'Ansible', 'Helm', 'GitOps', 'Cloud-Agnostic Patterns'] },
   { icon: '⚙', title: 'CI/CD & Containers', tags: ['Jenkins', 'GitLab CI/CD', 'GitHub Actions (OIDC)', 'Playwright', 'Docker', 'Kubernetes (EKS/GKE/k3s)', 'Release Engineering'] },
   { icon: '🛡', title: 'DevSecOps & Security', tags: ['SAST/DAST', 'VAPT', 'SonarQube', 'Snyk', 'Trivy', 'OWASP ZAP', 'HashiCorp Vault', 'Secrets Management', 'TLS/PKI', 'IAM', 'Zero-Trust'] },
-  { icon: '📈', title: 'SRE & Observability', tags: ['Custom Observability (FastAPI + MySQL)', 'Datadog', 'Allure Reporting', 'Incident Mgmt', '99.9% Uptime'] },
+  { icon: '📈', title: 'SRE & Observability', tags: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog', 'Custom Observability (FastAPI + MySQL)', 'Allure Reporting', 'Incident Mgmt', '99.9% Uptime'] },
   { icon: '✓', title: 'Compliance & Cost', tags: ['SOC 2', 'ISO 27001', 'GDPR Readiness', 'Cloud Cost Optimization', 'Auto-Scaling'] },
   { icon: '❯', title: 'Languages & Platforms', tags: ['Bash', 'Python', 'PowerShell', 'SQL/NoSQL', 'Linux', 'Windows Server', 'Agentic AI / ML Platforms'] },
 ];
@@ -46,7 +46,7 @@ const EXPERIENCE = [
       'DevOps Lead on WiiZ, Estrel AI\'s Agentic AI SaaS Operating System — own CI/CD pipelines, cloud infrastructure, and security controls as the platform scales toward multi-cloud enterprise deployment.',
       'Built Terragrunt-based IaC for GCP and on-premises Kubernetes (k3s); deployed HashiCorp Vault, migrating hard-coded API keys to secret-manager lookups.',
       'Own release engineering for the core AI workflow backend (580+ merged PRs): scheduled dev/sandbox/prod builds, rollback/versioning workflows, PR governance; optimized Docker builds (shared base image + pip cache mounts).',
-      'Designed and built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy + standalone React dashboard with multi-env real-time metrics, logs, executions and error summaries; per-env MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
+      'Designed and built the platform observability stack (monitor.wiiz.it): FastAPI hub proxy + standalone React dashboard with metrics, logs, executions and error summaries across environments; per-env MySQL monitoring DB with daily partitions, 14-day retention and self-healing maintenance; token-authenticated behind SSL-terminating Nginx.',
       'Built the test-automation & reporting pipeline: Playwright API suite (credential-free contract/isolation gate + authenticated behaviour/security jobs) running nightly via GitHub Actions; Allure reports published to private S3 and served on an EC2 report host via AWS SSM through GitHub OIDC + IAM instance roles — zero stored credentials.',
       'Implemented the Claim-Check Pattern for AWS SQS (payloads >250KB offloaded to S3); built driver-manager service for ODBC/RDBMS connectivity with driver pre-warming and env-driven CORS.',
       'Raised reliability & security: eliminated frame-upload read-timeouts (30s→120s), raised SQL execution timeout 55s→300s; CSP headers, rate limiting, S3 IAM instance-role fallback, pipeline-integrated SAST/DAST/VAPT (SOC 2 / ISO 27001 readiness).',

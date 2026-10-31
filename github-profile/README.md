@@ -39,7 +39,7 @@ Apply complete! Resources: 3 clouds, 0 downtime. 🚀
 | **🏗️ IaC & GitOps** | Terraform · Terragrunt · CloudFormation · Ansible · Helm · GitOps |
 | **⚙️ CI/CD** | Jenkins · GitLab CI/CD (self-hosted GitLab CE) · GitHub Actions (OIDC) · Docker · Kubernetes · Release Engineering |
 | **🛡️ DevSecOps** | SAST/DAST · VAPT · SonarQube · Snyk · Trivy · OWASP ZAP · HashiCorp Vault · TLS/PKI · Zero-Trust |
-| **📈 Observability** | Custom Observability (FastAPI + MySQL) · Datadog · Allure Reporting · Incident Mgmt |
+| **📈 Observability** | Prometheus · Grafana · ELK · Datadog · Custom Observability (FastAPI + MySQL) · Allure |
 | **✅ Compliance** | SOC 2 · ISO 27001 · GDPR readiness · Cloud cost optimization |
 | **🧩 Platform services** | Milvus · Keycloak SSO · MinIO · Redis · Nginx/Caddy · AWS SQS/S3 patterns |
 | **❯ Scripting** | Bash · Python · PowerShell · SQL/NoSQL · Linux · Windows Server |
